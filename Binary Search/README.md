@@ -84,7 +84,7 @@ In this template, there are 2 candidates for post-processing. Use when we need t
 
 Binary search is applied on monotonic predicate function.
 Only two such possible function are:
-F F F F T T T T
+F F F F T T T T<br />
 T T T T F F F F
 
 Lets take example: <br />
