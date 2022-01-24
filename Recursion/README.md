@@ -1,11 +1,20 @@
 # Recursion
+Recursion is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.
 
-## Ask these questions:
+## Types of Recursion
+
+### Functional Recursion:
+We expect to return the answer from the function.<br />
+
+### Parameterised Recursion:
+We try to form answer from top to base case in the parameters and expect to print the answer in base case. 
+
+*It is better to use parameterised recursion as functional someimtes may lead to huge memory usage.
+
+## Ask these questions to approach a recusive problem:
 
 ### -> Can i make the input smaller (explicitly)?
 Yes -> Expectation Faith Strategy
-
-Mostly Functional Recursion is used here : We expect to return the answer from the function.
 
 Three Steps:
 -> Figure out what is out expectation from the function.(what you really want the function to return)<br />
@@ -37,7 +46,6 @@ int climbStairs(int n) {
 (Decisions itself will lead to smaller input)
 Yes -> Recursion Tree
 
-Mostly Parameterised Recursion is used here : We try to form answer from top to base case in the parameters and expect to print the answer in base case. 
 
 
 
@@ -53,9 +61,9 @@ Mostly Parameterised Recursion is used here : We try to form answer from top to 
 Single recursive call:
 
 ```
-pre area<br />
-function(n-1); // recursive call<br />
-post area<br />
+pre area
+function(n-1); // recursive call
+post area
 ```
 
 Pre area is always executed while going deep in the recursion Tree.<br />
@@ -65,9 +73,9 @@ Multiple recursive calls:
 
 ```
 pre area
-function(n-1);
+function(n-1); // recursive call
 in area
-function(n-2);
+function(n-2); // recursive call 2
 post area
 ```
 
