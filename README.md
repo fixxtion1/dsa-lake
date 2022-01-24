@@ -1,3 +1,10 @@
+# DSA-Lake
+
+A data structures and algorithms repository that holds resources, codes, tips and notes from many sources.
+
+
+### Tips
+
 If input array is sorted then
 - Binary search
 - Two pointers
