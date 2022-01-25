@@ -4,10 +4,10 @@ Recursion is a method of solving a problem where the solution depends on solutio
 ## Types of Recursion
 
 ### Functional Recursion:
-We expect to return the answer from the function.<br />
+We expect to return the answer from the function.(works expectionaly well with expectation faith strategy)<br />
 
 ### Parameterised Recursion:
-We try to form answer from top to base case in the parameters and expect to print the answer in base case. 
+We try to form answer from top to base case in the parameters and expect to print the answer in base case (or maybe store).
 
 *It is better to use parameterised recursion as functional someimtes may lead to huge memory usage.
 
