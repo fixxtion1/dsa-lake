@@ -62,4 +62,22 @@ void backtrack(vector<int> &nums, int i,vector<int> &temp, vector<vector<int>> &
 
 ### [Combination Sum](https://leetcode.com/problems/combination-sum/)
 
+The idea is to take a current index as many times given it is <= target.
 
+```
+void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<vector<int>> &final, int i){
+        
+        if(i==candidates.size()){
+            if(target==0) final.push_back(temp);
+            return;
+        }
+        
+        if(candidates[i]<=target){
+            temp.push_back(candidates[i]);
+            backtrack(candidates, target-candidates[i], temp, final, i);
+            temp.pop_back();
+            
+        }
+        backtrack(candidates, target, temp, final, i+1);
+    }
+```
