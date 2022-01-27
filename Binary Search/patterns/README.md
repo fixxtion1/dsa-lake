@@ -1,26 +1,10 @@
 # Patterns 
 
+## Simple Binary Search
+
 ### [Find Smallest Letter Greater Than Target](https://leetcode.com/problems/binary-search/)
 
 The idea is to first compare the target >= last char in array if so return first elemnt(wrap around), after that same binary search algo.
-
-
-### [Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)
-
-The idea is to compare the current middle element with next middle element.
-
-```
-int peakIndexInMountainArray(vector<int>& a) {
-        int s = 0, e = a.size()-1;
-        
-        while(s<e){
-            int m = s + (e-s)/2;
-            if(a[m]<a[m+1]) s = m+1;
-            else e = m;
-        }
-        return s;
-    }
-```
 
 
 ### [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
@@ -42,6 +26,28 @@ int findDuplicate(vector<int>& nums) {
        return s; 
     }
 ```
+
+## Tricky Binary Search
+There are multiple conditions we need to figure out if we need to select left or if we need to select right.
+
+
+### [Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)
+
+The idea is to compare the current middle element with next middle element.
+
+```
+int peakIndexInMountainArray(vector<int>& a) {
+        int s = 0, e = a.size()-1;
+        
+        while(s<e){
+            int m = s + (e-s)/2;
+            if(a[m]<a[m+1]) s = m+1;
+            else e = m;
+        }
+        return s;
+    }
+```
+
 ### [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 The idea is to compare the middle element with ends of the array (start or end).
@@ -60,8 +66,6 @@ int findMin(vector<int>& nums) {
         return nums[s];
     }
 ```
-
-
 
 
 ### [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
@@ -94,6 +98,28 @@ int search(vector<int>& nums, int target) {
     }
 ```
 
+### [Missing element in sorted array](https://leetcode.com/problems/missing-element-in-sorted-array/)
+
+```
+```
+
+## Problems where its Difficult to figure out if Binary Search can be applied.
+
+There are patterns of problems where its little difficult to figure out if binary search can be applied.
+There would be a given array of length (n) and we need to find minimum which satifies contraint on array.
+Runtime of these are normally nLog(m).
+
+### [Minimum number of days to make a bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+
+### [Sum of mutated array closet to target](https://leetcode.com/problems/sum-of-mutated-array-closest-to-target/)
+
+### [Find the smallest divisor given a threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)
+
+### [Koko eating bananas](https://leetcode.com/problems/koko-eating-bananas/)
+
+### [Capacity to ship package within d days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+
+## Binary Search on 2D array
 
 ### [Search a 2D sorted Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
 
@@ -114,3 +140,5 @@ bool searchMatrix(vector<vector<int>>& a, int target) {
         return false;
     }
 ```
+
+
