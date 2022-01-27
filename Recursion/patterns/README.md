@@ -25,7 +25,8 @@ bool f(){
 }
 ```
 
-### Technique to print count of number of subsequenc with sum k
+### Technique to print count of number of subsequence with sum k
+
 Make the function return int. If encoutner the base coundition return 1, else return 0. Call the left recursive call and right recursive call and finally return the sum of both(left+right).
 
 ```
@@ -41,50 +42,8 @@ int f(){
 }
 ```
 
-### [Subsets](https://leetcode.com/problems/subsets/)
-
-The idea is to make a recursive function(parameterised) with parameters as input vector, a index, 1d temp vector(for storing the one subset element at every stage when base case is encountered) and finally a 2d ans vector (at base we have to add the temp to final) and then we may apply take/not take idea to get all possible elements of subset.
-
-```
-void backtrack(vector<int> &nums, int i,vector<int> &temp, vector<vector<int>> &ans){
-        if(i==nums.size()){
-            ans.push_back(temp);
-            return;         
-        }
-        
-        temp.push_back(nums[i]); //take
-        backtrack(nums, i+1, temp, ans);
-        temp.pop_back();    //not take
-        backtrack(nums, i+1,temp, ans);
-          
-    }
-```
-
-### [Combination Sum](https://leetcode.com/problems/combination-sum/)
-
-The idea is to take a current index as many times given it is <= target.
-
-```
-void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<vector<int>> &final, int i){
-        
-        if(i==candidates.size()){
-            if(target==0) final.push_back(temp);
-            return;
-        }
-        
-        if(candidates[i]<=target){
-            temp.push_back(candidates[i]);
-            backtrack(candidates, target-candidates[i], temp, final, i);
-            temp.pop_back();
-            
-        }
-        backtrack(candidates, target, temp, final, i+1);
-    }
-```
-
-
-
 ### [Permutations](https://leetcode.com/problems/permutations/)
+
 ```
     vector<vector<int>> ans;
     void backtrack(vector<int> &nums,vector<int> temp,vector<int> &vis){
@@ -146,6 +105,7 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
 ```
 
 ### [Subsets](https://leetcode.com/problems/subsets/)
+
 ```
     void backtrack(vector<vector<int>> &ans,vector<int> nums,int start,vector<int> temp){
         ans.push_back(temp);
@@ -163,7 +123,9 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
+
 ### [Subsets II](https://leetcode.com/problems/subsets-ii/)
+
 ```
     void backtrack(vector<vector<int>> &ans,vector<int> nums,vector<int> temp,int start){
         ans.push_back(temp);
@@ -185,7 +147,9 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
+
 ### [Combinations](https://leetcode.com/problems/combinations/)
+
 ```
     void backtrack(vector<vector<int>> &ans,vector<int> &vis,int start,int &n,int &k,vector<int> &temp){
         if(temp.size()==k){
@@ -212,7 +176,9 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
+
 ### [Combination Sum](https://leetcode.com/problems/combination-sum/)
+
 ```
     vector<vector<int>> ans;
     void backtrack(vector<int> &nums,vector<int> &temp,int &sum,int currsum,int start){
@@ -236,7 +202,9 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
-### [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)]
+
+### [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
+
 ```
     vector<vector<int>> ans;
     void backtrack(vector<int> &nums,vector<int> &temp,int &sum,int currsum,int start){
@@ -264,7 +232,9 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
+
 ### [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
+
 ```
     vector<int> nums = {1,2,3,4,5,6,7,8,9};
     vector<vector<int>> ans;
@@ -297,7 +267,9 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
+
 ### [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
+
 ```
     vector<string> codes = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
     vector<string> ans;
@@ -325,7 +297,44 @@ void backtrack(vector<int> &candidates, int target, vector<int> &temp, vector<ve
         return ans;
     }
 ```
+
+### [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
+
+```
+    vector<vector<string>> ans;
+    bool ispalindrome(string &s,int i,int j){
+        while(i<j){
+            if(s[i]!=s[j]){
+                return false;
+            }
+            i++;j--;
+        }
+        return true;
+    }
+    void backtrack(string &s,vector<string> &temp,int start){
+        if(start==s.size()){
+            ans.push_back(temp);
+            return;
+        }
+        for(int i=start;i<s.size();i++){
+            if(ispalindrome(s,start,i)){
+                temp.push_back(s.substr(start,i-start+1));
+                backtrack(s,temp,i+1);
+                temp.pop_back();
+            }
+        }
+    }
+    vector<vector<string>> partition(string s) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        vector<string> temp;
+        backtrack(s,temp,0);
+        return ans;
+    }
+```
+
 ### [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+
 ```    
     void backtrack(int n,vector<string> &ans,string temp,int open,int close){
         if(temp.size()==(2*n)){
