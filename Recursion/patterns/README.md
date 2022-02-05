@@ -1,14 +1,5 @@
 # Patterns
 
-### Some terms
-
-Substring: continous part of string<br />
-Subsequence: any combination part of string but order matters<br />
-Subset: any combo and order dont matter even<br />
-
-But it is common practice to print powerset in case of Subsequnece too.
-
-
 ### Technique to print only one answer
 
 Make the function itself boolean. If base condititon is true, return true else false. Put the recursive call in if condition.
