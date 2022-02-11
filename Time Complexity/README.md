@@ -1,32 +1,24 @@
 # Common Complexities and Constraints
 
-Mathematical formulas that just calculate an answer: $\mathcal{O}(1)$
-Binary search: $\mathcal{O}(\log n)$
-Sorted set/map or priority queue: $\mathcal{O}(\log n)$ per operation
-Prime factorization of an integer, or checking primality or compositeness of
-an integer naively: $\mathcal{O}(\sqrt{n})$
-Reading in $n$ items of input: $\mathcal{O}(n)$
-Iterating through an array or a list of $n$ elements: $\mathcal{O}(n)$
-Sorting: usually $\mathcal{O}(n \log n)$ for default sorting algorithms
-(mergesort, Collections.sort, Arrays.sort)
-Java Quicksort Arrays.sort function on primitives: $\mathcal{O}(n^2)$
+#### Mathematical formuals that just calculate answer: O(1)
+#### Binary Search: O(log n)
+#### Sorted set/map or heap: O(log n) per operation
+#### Reaing in n items: O(n)
+#### Iteratinf through all subsets of size k: O(n<sup>k</sup>)
+#### Iterating through all subsets: O(2<sup>n</sup>)
+#### Iterating through all permuataions: O(n!)
 
-See Introduction to Data Structures for details.
+### Here are conservative upper bounds on the value of n for each time complexity. You might get away with more than this, but this should allow you to quickly check whether an algorithm is viable.
 
-
-Iterating through all subsets of size $k$ of the input elements:
-$\mathcal{O}(n^k)$. For example, iterating through all triplets is
-$\mathcal{O}(n^3)$.
-Iterating through all subsets: $\mathcal{O}(2^n)$
-Iterating through all permutations: $\mathcal{O}(n!)$
-
-
-Here are conservative upper bounds on the value of $n$ for each time complexity.
-You might get away with more than this, but this should allow you to quickly
-check whether an algorithm is viable.
-
-
-
+n <= 10 -> O(n!)<br />
+n <= 20 -> O(2<sup>n</sup>.n)
+n <= 80 -> O(n<sup>4</sup>)
+n <= 400 -> O(n<sup>3</sup>)
+n <= 7500 -> O(n<sup>2</sup>)
+n <= 7.10<sup>4</sup> -> O(n root(n))
+n <= 5.10<sup>5</sup> -> O(nlogn)
+n <= 5.10<sup>6</sup> -> O(n)
+n <= 10<sup>18</sup> -> O(log<sup>2</sup> n),O(log n),O(1)
 
 
 
