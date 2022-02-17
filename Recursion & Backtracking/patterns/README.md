@@ -1,4 +1,4 @@
-# Patterns
+# [Patterns](https://leetcode.com/list/96c0uuu7)
 
 ### Technique to print only one answer
 
