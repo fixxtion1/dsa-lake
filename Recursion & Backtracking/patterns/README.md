@@ -142,28 +142,21 @@ int f(){
 ### [Combinations](https://leetcode.com/problems/combinations/)
 
 ```
-    void backtrack(vector<vector<int>> &ans,vector<int> &vis,int start,int &n,int &k,vector<int> &temp){
+    void backtrack(vector<vector<int>> &ans,int start,int &n,int &k,vector<int> &temp){
         if(temp.size()==k){
             ans.push_back(temp);
             return;
         }
         for(int i=start;i<=n;i++){
-            if(vis[i]==-1){
                 temp.push_back(i);
-                vis[i]=1;
-                backtrack(ans,vis,i+1,n,k,temp);
-                vis[i]=-1;
+                backtrack(ans,i+1,n,k,temp);
                 temp.pop_back();
-            }
         }
     }
     vector<vector<int>> combine(int n, int k) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
        vector<vector<int>> ans;
-        vector<int> vis(n+1,-1);
         vector<int> temp;
-        backtrack(ans,vis,1,n,k,temp);
+        backtrack(ans,1,n,k,temp);
         return ans;
     }
 ```

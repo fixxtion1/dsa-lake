@@ -14,6 +14,7 @@ We try to form answer from top to base case in the parameters and expect to prin
 ## Ask these questions to approach a recusive problem:
 
 ### -> Can i make the input smaller (explicitly)?
+Used in Tree, linked list, and other ...
 Yes -> Expectation Faith Strategy
 
 Three Steps:
@@ -45,13 +46,9 @@ int climbStairs(int n) {
 ### -> Do i need to take decisions or make some choices in problems?
 (Decisions itself will lead to smaller input)
 Yes -> Recursion Tree
-
-
-
-
-
-
-
+NOTE: Thinking and drawing recursion tree and writing code are two different things. 
+When try to come up with a recusion tree -> try to go all out without any hesitation and draw that tree
+When writing code a specific approach is followed.
 
 
 ## Some ifk things
