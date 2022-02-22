@@ -1,21 +1,22 @@
+template<typename T>
 class Vector{
-	int* arr;
+	T* arr;
 	int cs; // current size
 	int ms; // max size
 public:
 	Vector(int max_size=1){
 		ms = max_size;
 		cs = 0;
-		arr = new int[ms];
+		arr = new T[ms];
 
 	}
 
 	//to add element in the last of the vector
-	void push_back(const int d){
+	void push_back(const T d){
 		if(ms == cs){
-			int* oldarr = arr;
+			T* oldarr = arr;
 			ms = 2*ms;
-			arr = new int[ms];
+			arr = new T[ms];
 			for(int i=0; i<cs; i++) arr[i] = oldarr[i];
 			delete [] oldarr;
 
@@ -40,18 +41,22 @@ public:
 		return arr[cs-1];
 	}
 
-	int at(int i) const{
+	T at(int i) const{
 		return arr[i];
 	}
 
+	//returns the total size(elemnts it currently do have) 
 	int size() const{
 		return cs;
 	}
+
+	//returns the total capacity of the vector
 	int capacity() const{
 		return ms;
 	}
-
-	int operator[](int i) const{
+	
+	//Overloaded the operator [] to get value at that index
+	T operator[](int i) const{
 		return arr[i];
 	}
 
