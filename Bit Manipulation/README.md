@@ -1,4 +1,4 @@
-# Bit Manipulation
+# [Bit Manipulation](https://leetcode.com/discuss/study-guide/1151183/tips-hacks-which-you-cant-ignore-as-a-coder)
 
 
 Binary AND(&) -> if any of the bit is 0, resultant would be zero also
