@@ -79,15 +79,13 @@ int firstNonRepeat(string a){
 }
 ```
 
-#### Given a string, find lexicographic rank of it
+#### Panagram Problem
 
-I/P: str = "BAC"
-O/P: 3
-
-
+I/P: txt= "geeksforgeeks" and pattern = "egek"
+O/P: YES 
 
 
-
+g e e k s f o r g e e k s 
 
 
 
