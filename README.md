@@ -30,7 +30,7 @@ If must solve in-place then
 - Swap corresponding values
 - Store one or more different values in the same pointer
 
-If asked for maximum/minumum subarray/subset/options then
+If asked for maximum/minumum subarray/subset/options or How many ways then
 - Dynamic programming
 
 If asked for top/least K items then

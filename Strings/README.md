@@ -79,6 +79,38 @@ int firstNonRepeat(string a){
 }
 ```
 
+
+#### Lexicographic Rank of the string
+
+Idea is to find the string lexo smaller than given string and add one to it to get the rank
+
+
+```
+int lexRank(stirng str){
+	int res = 1;
+	int n = str.length();
+	int mul = fact(n);
+	int count[256] = {0};
+	
+	for(int i=0; i<n; i++) 
+		count[str[i]]++;
+	
+	for(int i=1; i<256; i++) 
+		count[i] = count[i] + count[i-1];
+		
+	for(int i=0; i<n; i++){
+		mul = mul / (n-i);
+		rank = rank + count[str[i]-1]*mul;
+		
+		for(int j=str[i]; j<256; j++) 
+			count[j--];
+	}
+	
+	return rank;	
+	}
+}
+```
+
 #### Panagram Problem
 
 I/P: txt= "geeksforgeeks" and pattern = "egek"
@@ -90,4 +122,34 @@ g e e k s f o r g e e k s
 
 
 
+### Given a string, check if they are rotation of each other.
 
+I/P: s1="ABCD", s2="CDAB"
+O/P: True
+
+Idea is to concatinate one of the string with itself and search other string in this concatentate one. 
+
+```
+bool rotateString(string A, string B) {                
+    return A.size() == B.size() && (A + A).find(B) != string::npos;
+}  
+```
+
+
+### Pattern searching Algorithms
+
+-> Naive Algorithm
+
+```
+void patternSearch(string s, string pat){
+	int n = s.length(), m = pat.length();
+	for(int i=0; i<n-m; i++){
+		for(int j=0; j<m; j++){
+			if(s[i+j] != pat[j]) break;
+			
+			if(j==m) cout << i << " ";
+		}
+		
+	}
+}
+```
