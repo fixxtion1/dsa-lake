@@ -43,6 +43,7 @@ If we don't know keys in advance:
 
 Hash table is basically an array of linked list header and when collision happens idea is to push back the item to linked list.
 
+
 Performance:
 
 Load factor(alpha) : How big you want ur hash table to be -> number of keys / number of slots
@@ -95,6 +96,12 @@ Idea is to use only array to store eveyr key
 If collison happens we'll use linear probing(we linearly search for next empty slot)
 
 Searching:
+
+We compute the hash funciton, we go to that index and compare if we find, we return true. Otherwise we linearly search. We stop when one of the three cases arises
+
+1. Empty Slot
+2. Key found
+3. Traverse through whole array
 
 
 
