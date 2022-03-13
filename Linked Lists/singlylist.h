@@ -80,19 +80,20 @@ void List::push_back(int data){
 
 void List::insert(int data, int pos){
 	
-	if(pos == 0){ 
+	if(pos == 1){ 
 		push_front(data);
 		return;
 	}
 	
 	Node* temp = head;
-	while(pos--){
+	for(int i=1; i<=pos-2 && temp!=NULL; i++){
 		temp = temp->next;
 	}
-	
-	Node* newnode = new Node(data);
-	newnode->next = temp->next;
-	temp->next = newnode;
+	if(temp != NULL){
+		Node* newnode = new Node(data);
+		newnode->next = temp->next;
+		temp->next = newnode;
+	}	
 	
 }
 
