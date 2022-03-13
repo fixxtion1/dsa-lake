@@ -3,7 +3,7 @@
 
 //Method 1 (using the size of the linekd list)
 
-//int getNthFromLast(Node *head, int n)
+int getNthFromLast(Node *head, int n)
 {
        // Your code here
        Node* temp= head;
