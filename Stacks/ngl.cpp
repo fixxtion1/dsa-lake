@@ -1,5 +1,5 @@
 // I/O: 1 3 2 4
-// O/P: 3 4 4 -1
+// O/P: -1 -1 3 -1
 
 //Idea is to traverse the array from last and che
 
@@ -20,12 +20,12 @@ void solve(){
 	
 	vector<int> v(n);
 	for(int i=0; i<n; i++) cin >> v[i];
-		
+			
 		
 	stack<int> s;
 	vector<int> ans;
 
-	for(int i=n-1; i>=0; i--){
+	for(int i=0; i<n; i++){
 		if(s.empty()) ans.push_back(-1);
 		else if(s.size()>0 and s.top()>arr[i]) ans.push_back(s.top());
 		else if(s.size()>0 and s.top<=arr[i]){
